@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Cuts | Premium Barbershop</title>
+<meta name="description" content="Elite Cuts Barbershop. Discover professional haircuts, clean fades and premium grooming services.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0b0b0b;
+    --panel: #151515;
+    --gold: #d7ad60;
+    --white: #f8f6f0;
+    --gray: #b5b1a8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #29251d;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 13px;
+    color: #ddd8ce;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 520px;
+    padding: 100px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 80% 30%, #40321b 0%, transparent 38%),
+        linear-gradient(120deg, #0b0b0b 45%, #1b1710);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    margin: 22px 0;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: var(--gray);
+    max-width: 490px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--gold);
+    color: #17120a;
+    padding: 14px 23px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.button:hover {
+    background: #f0d18e;
+    transform: translateY(-2px);
+}
+
+.button-outline {
+    display: inline-block;
+    border: 1px solid #716044;
+    padding: 13px 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+section {
+    padding: 75px 7%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading small {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+.heading h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-top: 8px;
+}
+
+.heading p {
+    color: var(--gray);
+    margin-top: 8px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.service {
+    padding: 30px 23px;
+    background: var(--panel);
+    border: 1px solid #302a20;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.service:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.service h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.service p {
+    color: var(--gray);
+    font-size: 13px;
+    min-height: 42px;
+}
+
+.price {
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.gallery {
+    background: #111;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    min-height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(145deg, #29231a, #151515);
+    border: 1px solid #383025;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery-item span {
+    font-size: 45px;
+}
+
+.gallery-item strong {
+    color: var(--gold);
+}
+
+.about {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    color: var(--gray);
+    margin-top: 18px;
+}
+
+.contact {
+    text-align: center;
+    background:
+        radial-gradient(ellipse at center, #352817, #0b0b0b 70%);
+}
+
+.contact p {
+    color: var(--gray);
+    margin: 15px auto 25px;
+    max-width: 520px;
+}
+
+.contact-details {
+    margin-top: 30px;
+    color: #ded6c8;
+    font-size: 14px;
+    line-height: 2;
+}
+
+footer {
+    padding: 25px 7%;
+    text-align: center;
+    border-top: 1px solid #302a20;
+    color: #9d9689;
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 75px 5%;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .services,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        min-height: 150px;
+    }
+
+    .button-outline {
+        margin: 12px 0 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#home" class="logo">ELITE <span>CUTS.</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Styles</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="tag">PRECISION • STYLE • CONFIDENCE</div>
+
+        <h1>Look sharp.<br><span>Feel confident.</span></h1>
+
+        <p>
+            More than a haircut. Experience professional grooming,
+            fresh fades and attention to every detail.
+            Your style deserves the best.
+        </p>
+
+        <a href="#contact" class="button">REQUEST AN APPOINTMENT →</a>
+        <a href="#services" class="button-outline">Explore Services</a>
+    </div>
+</section>
+
+<section id="services">
+    <div class="heading">
+        <small>What We Do</small>
+        <h2>Our Services</h2>
+        <p>Quality grooming, tailored to your style.</p>
+    </div>
+
+    <div class="services">
+
+        <article class="service">
+            <div class="service-icon">✂️</div>
+            <h3>Classic Haircut</h3>
+            <p>A clean, professional haircut suited to your personal style.</p>
+            <div class="price">$200</div>
+        </article>
+
+        <article class="service">
+            <div class="service-icon">💈</div>
+            <h3>Fade & Taper</h3>
+            <p>Sharp fades, clean tapers and carefully blended finishes.</p>
+            <div class="price">$300</div>
+        </article>
+
+        <article class="service">
+            <div class="service-icon">🧔</div>
+            <h3>Beard Grooming</h3>
+            <p>Neat beard shaping and grooming for a polished appearance.</p>
+            <div class="price">$200</div>
+        </article>
+
+    </div>
+
+    <p style="color:#9d9689;font-size:12px;margin-top:22px;">
+        Demo prices only. Confirm actual services and prices with the barber.
+    </p>
+</section>
+
+<section class="gallery" id="gallery">
+    <div class="heading">
+        <small>The Craft</small>
+        <h2>Find Your Style</h2>
+        <p>A few popular styles to inspire your next cut.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <span>✂️</span>
+            <strong>Classic Cut</strong>
+            <p>Timeless and clean.</p>
+        </div>
+
+        <div class="gallery-item">
+            <span>💈</span>
+            <strong>Modern Fade</strong>
+            <p>Sharp lines and smooth blends.</p>
+        </div>
+
+        <div class="gallery-item">
+            <span>🧔</span>
+            <strong>Beard Design</strong>
+            <p>Detailed grooming.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+    <div class="about">
+        <div class="heading">
+            <small>Our Story</small>
+            <h2>Every Detail Matters.</h2>
+        </div>
+
+        <p>
+            Elite Cuts is a sample barbershop brand built around
+            quality grooming, personal style and great customer service.
+            Our goal is to help every customer feel confident in their look.
+        </p>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="heading">
+        <small>Let's Get You Ready</small>
+        <h2>Ready for a Fresh Cut?</h2>
+    </div>
+
+    <p>
+        Contact us to ask about available appointments,
+        services and pricing.
+    </p>
+
+    <a class="button"
+       href="https://wa.me/2348000000000?text=Hello%20Elite%20Cuts%2C%20I%20would%20like%20to%20ask%20about%20an%20appointment.">
+       CONTACT US ON WHATSAPP →
+    </a>
+
+    <div class="contact-details">
+        <p>📍 Your Barbershop Address Here</p>
+        <p>🕒 Add your opening hours here</p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <strong>ELITE CUTS.</strong>
+    <p>© 2026 Elite Cuts Barbershop. Demo website for portfolio use.</p>
+</footer>
+
+</body>
+  </html>
